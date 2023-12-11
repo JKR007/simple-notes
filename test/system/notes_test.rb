@@ -12,7 +12,7 @@ class NotesTest < ApplicationSystemTestCase
     click_on "New Note"
     assert_selector "h1", text: "New Note"
 
-    fill_in "Name", text: "Mortred is a carry hero"
+    fill_in "Title", text: "Mortred is a carry hero"
     click_on "Create Note"
 
     assert_selector "h1", text: "Notes"
@@ -21,7 +21,7 @@ class NotesTest < ApplicationSystemTestCase
 
   test "Show Note" do
     visit notes_path
-    click_on @note.name
+    click_on @note.title
 
     assert_selector "h1", text: "Second note"
   end
@@ -33,7 +33,7 @@ class NotesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
     assert_selector "h1", text: "Edit Note"
 
-    fill_in "Name", with: "Second note - updated"
+    fill_in "Title", with: "Second note - updated"
     click_on "Update Note"
 
     assert_selector "h1", text: "Notes"
@@ -43,9 +43,9 @@ class NotesTest < ApplicationSystemTestCase
   test "Destroy Note" do
     visit notes_path
     assert_selector "h1", text: "Notes"
-    assert_text @note.name
+    assert_text @note.title
 
     click_on "Remove", match: :first
-    assert_no_text @note.name
+    assert_no_text @note.title
   end
 end

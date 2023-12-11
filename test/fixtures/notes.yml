@@ -1,6 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
 first:
-  name: "First note"
+  title: 'First Note'
+
 second:
-  name: "Second note"
+  title: 'Second Note'
+
 third:
-  name: "Third note"
+  title: 'Third Note'
