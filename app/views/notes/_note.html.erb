@@ -1,0 +1,7 @@
+<div class="note">
+	<%= link_to note.title, note_path(note) %>
+	<div class="note_actions">
+		<%= link_to "Edit", edit_note_path(note), class: "btn btn--light" %>
+		<%= button_to "Remove", note_path(note), method: :delete, class: "btn btn--light" %>
+	</div>
+</div>

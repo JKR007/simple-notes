@@ -1,0 +1,8 @@
+<main class="container">
+	<div class="header">
+		<h1>Notes</h1>
+		<%= link_to "New Note", new_note_path, class: "btn btn--pirmary" %>
+	</div>
+
+	<%= render @notes %>
+</main>
