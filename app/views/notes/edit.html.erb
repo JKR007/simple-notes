@@ -1,8 +1,8 @@
 <main>
-	<%= link_to sanitize("&larr; Back to Note"), note_path(@note) %>
-	<div class="header">
-		<h1>Edit Note</h1>
-	</div>
+  <%= link_to sanitize("&larr; Back to Note"), note_path(@note) %>
+  <div class="header">
+    <h1>Edit Note</h1>
+  </div>
 
-	<%= render 'form', note: @note %>
+  <%= render 'form', note: @note %>
 </main>

@@ -1,10 +1,10 @@
 <%= simple_form_for @note, html: { class: "note form" } do |f| %>
-	<% if @note.errors.any? %>
-		<div class="error-message">
-			<%= @note.errors.full_messages.to_sentence.capitalize %>
-		</div>
-	<% end %>
+  <% if @note.errors.any? %>
+    <div class="error-message">
+      <%= @note.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
 
-	<%= f.input :title, error: false, input_html: { autofocus: true } %>
-	<%= f.submit class: "btn btn--secondary" %>
+  <%= f.input :title, error: false, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn--secondary" %>
 <% end %>
