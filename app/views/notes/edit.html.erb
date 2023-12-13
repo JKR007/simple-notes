@@ -4,5 +4,7 @@
     <h1>Edit Note</h1>
   </div>
 
-  <%= render 'form', note: @note %>
+  <%= turbo_frame_tag @note do %>
+    <%= render 'form', note: @note %>
+  <% end %>
 </main>

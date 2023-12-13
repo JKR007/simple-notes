@@ -11,9 +11,9 @@ class NotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Notes"
 
     click_on "New Note"
-    assert_selector "h1", text: "New Note"
-
     fill_in "Title", with: "Mortred is a carry hero"
+
+    assert_selector "h1", text: "Notes"
     click_on "Create Note"
 
     assert_selector "h1", text: "Notes"
@@ -32,9 +32,9 @@ class NotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Notes"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit Note"
-
     fill_in "Title", with: "Second Note - updated"
+
+    assert_selector "h1", text: "Notes"
     click_on "Update Note"
 
     assert_selector "h1", text: "Notes"
