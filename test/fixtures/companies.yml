@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+company_1:
+  name: 'Company 1'
+
+company_2:
+  name: 'Company 2'
