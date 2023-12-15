@@ -1,10 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 first:
+  company: company_1
   title: 'First Note'
 
 second:
+  company: company_1
   title: 'Second Note'
 
 third:
+  company: company_1
   title: 'Third Note'

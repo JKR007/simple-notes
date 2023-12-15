@@ -1,3 +1,6 @@
 class Company < ApplicationRecord
-  vlaidates :name, presence :true
+  has_many :users, dependent: :destroy
+  has_many :notes, dependent: :destroy
+
+  validates :name, presence: true
 end
