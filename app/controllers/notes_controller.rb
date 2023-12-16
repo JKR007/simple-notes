@@ -18,7 +18,7 @@ class NotesController < ApplicationController
     if @note.save
       respond_to do |format|
         format.html { redirect_to notes_path, notice: "Note was successfully created!" }
-        format.turbo_stream
+        format.turbo_stream { flash.now[:notice] = "Note was successfully created!" }
       end
     else
       render :new
@@ -30,7 +30,10 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to notes_path, notice: "Note was successfully updated!"
+      respond_to do |format|
+        format.html { redirect_to notes_path, notice: "Note was successfully updated!" }
+        format.turbo_stream { flash.now[:notice] = "Note was successfully updated!" }
+      end
     else
       render :edit
     end
@@ -41,7 +44,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to notes_path, notice: "Note was successfully removed!" }
-      format.turbo_stream
+      format.turbo_stream { flash.now[:notice] = "Note was successfully removed!" }
     end
   end
 
