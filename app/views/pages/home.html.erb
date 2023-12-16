@@ -1,0 +1,10 @@
+<main class="container">
+  <h1 class="header" >Notes Editor</h1>
+  <p class="page__paragraph">Awesome Notes Editor using Rails/Hotwire</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View Notes", notes_path, class: 'btn btn--dark' %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path, class: 'btn btn--dark' %>
+  <% end %>
+</main>

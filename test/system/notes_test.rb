@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class NotesTest < ApplicationSystemTestCase
   setup do
+    login_as users(:user_1)
     @note = notes(:second)
     @note_to_be_removed = notes(:first)
   end

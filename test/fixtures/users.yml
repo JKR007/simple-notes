@@ -2,10 +2,10 @@
 
 user_1:
   company: company_1
-  email: user_1@company_1.com
+  email: user_1@companyone.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
 user_2:
   company: company_2
-  email: user_2@company_2.com
+  email: user_2@companytwo.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

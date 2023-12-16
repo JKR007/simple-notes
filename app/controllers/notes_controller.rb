@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @notes = Note.desc
+    @notes = current_company.notes.desc
   end
 
   def show
@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(note_params)
+    @note = current_company.notes.build(note_params)
 
     if @note.save
       respond_to do |format|
@@ -48,7 +48,7 @@ class NotesController < ApplicationController
   private
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = current_company.notes.find(params[:id])
   end
 
   def note_params
