@@ -10,5 +10,5 @@ class Note < ApplicationRecord
   # after_update_commit -> { broadcast_replace_later_to "notes" }
   # after_destroy_commit -> { broadcast_remove_to "notes" }
   # all above three is can be written with single line of conde like below - rails syntactic sugar
-  broadcasts_to ->(note) { "notes" }, inserts_by: :prepend
+  broadcasts_to ->(note) { [ note.company, "notes" ] }, inserts_by: :prepend
 end
