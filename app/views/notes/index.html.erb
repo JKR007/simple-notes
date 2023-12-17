@@ -6,7 +6,9 @@
   </div>
 
   <%= turbo_frame_tag Note.new %>
+
   <%= turbo_frame_tag "notes" do %>
+    <%= render "notes/empty_state" %>
     <%= render @notes %>
   <% end %>
 </main>

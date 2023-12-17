@@ -1,0 +1,7 @@
+<div class="empty-state empty-state--only-child">
+  <div class="empty-state__text">
+    Yo don't have any notes yet!
+  </div>
+
+  <%= link_to "New Note", new_note_path, data: { turbo_frame: dom_id(Note.new) }, class: "btn btn--primary" %>
+</div>
