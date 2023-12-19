@@ -1,0 +1,8 @@
+<main container="main">
+  <%= link_to sanitize("&larr; Back to notes"), note_path(@note) %>
+  <div class="header">
+    <h1>New Date</h1>
+  </div>
+
+  <%= render "form", note: @note, line_item_date: @line_item_date %>
+</main>

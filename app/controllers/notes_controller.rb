@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   end
 
   def show
+    @line_item_dates = @note.line_item_dates.ordered
   end
 
   def new

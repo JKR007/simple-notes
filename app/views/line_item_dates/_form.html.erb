@@ -1,0 +1,11 @@
+<%= simple_form_for [note, line_item_date], html: { class: "form line-item-date" } do |f| %>
+  <% if line_item_date.errors.any? %>
+    <div class="error-message">
+      <%= line_item_date.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :date, error: false, html5: true, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", note_path(note), class: "btn btn--light" %>
+  <%= f.submit "Submit", class: "btn btn--secondary" %>
+<% end %>
