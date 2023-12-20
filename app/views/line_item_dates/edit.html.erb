@@ -5,5 +5,7 @@
     <h1>Edit Date</h1>
   </div>
 
-  <%= render "form", note: @note, line_item_date: @line_item_date %>
+  <%= turbo_frame_tag @line_item_date do %>
+    <%= render "form", note: @note, line_item_date: @line_item_date %>
+  <% end %>
 </main>

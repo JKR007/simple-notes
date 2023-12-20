@@ -1,0 +1,2 @@
+<%= turbo_stream.replace @line_item_date, partial: "line_item_dates/line_item_date", locals: { line_item_date: @line_item_date, note: @note } %>
+<%= render_turbo_stream_flash_messages %>

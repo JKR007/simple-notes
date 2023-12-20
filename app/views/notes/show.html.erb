@@ -1,10 +1,14 @@
+<%= turbo_stream_from [ @note, "line_item_dates" ] %>
 <main class="container">
   <%= link_to sanitize("&larr; Back to Notes"), notes_path %>
   <div class="header">
     <h1><%= @note.title %></h1>
 
-    <%= link_to "New Date", new_note_line_item_date_path(@note), class: "btn btn--primary" %>
+    <%= link_to "New Date", new_note_line_item_date_path(@note), data: { turbo_frame: dom_id(LineItemDate.new) }, class: "btn btn--primary" %>
   </div>
 
-  <%= render @line_item_dates, note: @note %>
+  <%= turbo_frame_tag LineItemDate.new %>
+  <%= turbo_frame_tag "line_item_dates" do %>
+    <%= render @line_item_dates, note: @note %>
+  <% end %>
 </main>

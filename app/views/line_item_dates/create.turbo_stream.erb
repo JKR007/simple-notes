@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend "line_item_dates", partial: "line_item_dates/line_item_date", locals: { note: @note, line_item_date: @line_item_date } %>
+<%= turbo_stream.update LineItemDate.new, "" %>
+<%= render_turbo_stream_flash_messages %>
