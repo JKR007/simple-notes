@@ -1,5 +1,6 @@
 class LineItemDate < ApplicationRecord
   belongs_to :note
+  has_many :line_items, dependent: :destroy
 
   validates :date, presence: true, uniqueness: { scope: :note_id }
 
