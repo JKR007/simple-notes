@@ -3,11 +3,21 @@ en:
     placeholders:
       note:
         title: Title of your Note
+      line_item:
+        name: Name of your Item
+        description: Description (*optional)
+        quantity: 1
+        unit_price: $100.00
     labels:
       note:
         title: Title
       line_item_date:
         date: Date
+      line_item:
+        name: Name
+        description: Description
+        quantity: Quantity
+        unit_price: Unit price
 
   helpers:
     submit:
@@ -17,3 +27,6 @@ en:
       line_item_date:
         create: Create Date
         update: Update Date
+      line_item:
+        create: Create Item
+        update: Update Item

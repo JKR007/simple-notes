@@ -22,7 +22,7 @@
       <%= render line_item_date.line_items, note: note, line_item_date: line_item_date %>
 
       <div class="line-item-date__footer">
-        <%= link_to "Add Item", [:new, note, line_item_date, :line_item], class: "btn btn--primary" %>
+        <%= link_to "Add Item", [:new, note, line_item_date, :line_item], data: { turbo_frame: "_top" }, class: "btn btn--primary" %>
       </div>
     </div>
   </div>
