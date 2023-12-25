@@ -11,7 +11,10 @@ class LineItemsController < ApplicationController
     @line_item = @line_item_date.line_items.new(line_item_params)
 
     if @line_item.save
-      redirect_to note_path(@note), notice: "Item was successfully created!"
+      respond_to do |format|
+        format.html { redirect_to note_path(@note), notice: "Item was successfully created!" }
+        format.turbo_stream { flash.now[:notice] = "Item was successfully created!" }
+      end
     else
       render :new
     end
@@ -22,7 +25,10 @@ class LineItemsController < ApplicationController
 
   def update
     if @line_item.update(line_item_params)
-      redirect_to note_path(@note), notice: "Item was successfully created!"
+      respond_to do |format|
+        format.html { redirect_to note_path(@note), notice: "Item was successfully updated!" }
+        format.turbo_stream { flash.now[:notice] = "Item was successfully updated!" }
+      end
     else
       render :edit
     end
@@ -31,7 +37,10 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
 
-    redirect_to note_path(@note), notice: "Item was successfully deleted"
+    respond_to do |format|
+      format.html { redirect_to note_path(@note), notice: "Item was successfully removed!" }
+      format.turbo_stream { flash.now[:notice] = "Item was successfully removed!" }
+    end
   end
 
   private

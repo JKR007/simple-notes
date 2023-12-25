@@ -1,0 +1,3 @@
+<%= turbo_stream.append nested_dom_id(@line_item_date, "line_items"), partial: "line_items/line_item", locals: { note: @note, line_item_date: @line_item_date, line_item: @line_item } %>
+<%= turbo_stream.update nested_dom_id(@line_item_date, LineItem.new), "" %>
+<%= render_turbo_stream_flash_messages %>
