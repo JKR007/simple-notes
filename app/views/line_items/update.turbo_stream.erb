@@ -1,2 +1,3 @@
 <%= turbo_stream.replace @line_item, partial: "line_items/line_item", locals: { note: @note, line_item_date: @line_item_date, line_item: @line_item } %>
+<%= turbo_stream.update dom_id(@note, :total), partial: "notes/total", locals: { note: @note } %>
 <%= render_turbo_stream_flash_messages %>

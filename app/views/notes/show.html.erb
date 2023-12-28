@@ -1,5 +1,5 @@
 <%= turbo_stream_from [ @note, "line_item_dates" ] %>
-<main class="container">
+<main class="container mb-xxxxl">
   <%= link_to sanitize("&larr; Back to Notes"), notes_path %>
   <div class="header">
     <h1><%= @note.title %></h1>
@@ -12,3 +12,7 @@
     <%= render @line_item_dates, note: @note %>
   <% end %>
 </main>
+
+<%= turbo_frame_tag dom_id(@note, :total) do %>
+  <%= render "notes/total", note: @note %>
+<% end %>

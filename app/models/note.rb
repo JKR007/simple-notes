@@ -1,6 +1,7 @@
 class Note < ApplicationRecord
   belongs_to :company
   has_many :line_item_dates, dependent: :destroy
+  has_many :line_items, through: :line_item_dates
 
   validates :title, presence: true
 
@@ -12,4 +13,8 @@ class Note < ApplicationRecord
   # after_destroy_commit -> { broadcast_remove_to "notes" }
   # all above three is can be written with single line of conde like below - rails syntactic sugar
   broadcasts_to ->(note) { [ note.company, "notes" ] }, inserts_by: :prepend
+
+  def total_price
+    line_items.sum(&:total_price)
+  end
 end
